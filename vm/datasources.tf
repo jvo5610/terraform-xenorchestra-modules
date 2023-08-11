@@ -1,4 +1,5 @@
 data "xenorchestra_cloud_config" "xoa_config" {
+  count = length(var.cloud_config_name) > 0 ? 1 : 0
   name = var.cloud_config_name
 }
 data "xenorchestra_template" "xoa_template" {
